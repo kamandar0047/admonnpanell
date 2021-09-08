@@ -1,0 +1,28 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="row">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5>
+        @if (!Model.IsDeleted)
+        {
+            <p class="text-success"> Active</p>
+            <form class="forms-sample" method="post">
+                <button type="submit" class="btn btn-danger mr-2">Submit</button>
+                <a class="btn btn-light" asp-action="Index">Cancel </a>
+            </form>
+        }
+        else
+        {
+            <p class="text-danger"> Deleted</p>
+            <form class="forms-sdample" asp-action="DeletePost" method="post">
+                <button type="submit" class="btn btn-success mr-2">Activate</button>
+                <a class ="btn btn-light" asp-action="Index">Cancel </a>
+            </form>
+        }
+
+    </div>
+</div>
+

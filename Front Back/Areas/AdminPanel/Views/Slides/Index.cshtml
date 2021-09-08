@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Slide>
+
+
+@{
+    ViewData["Title"] = "Index";
+    int count = 1;
+}
+
+<div class="row">
+    <div class="col-12 my-3">
+        <a asp-area="AdminPanel" asp-controller="Category" asp-action="Create" class="btn btn-success">content</a>
+    </div>
+    <div class="col-lg-6">
+        <div class="main-card mb-3 card">
+            <div class="card-body">
+                <h5 class="card-title">Categories</h5>
+                <table class="mb-0 table table-dark">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Imageth>
+                   
+                            <td>Settings</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var slide in Model)
+                        {
+                            <tr>
+
+                                <td>
+                                    @count
+                                </td>
+                                <td>
+                                    <img src="~/img/@slide.Image" style="height:100px; width:100px " alt="Alternate Text" />
+                                </td>
+                               
+                                <td>
+                                   
+                                    <a asp-action="Update" asp-root-id="@slide.Id" class="btn btn-warning">
+                                        <i class="fa fa-upload"> </i>
+                                    </a>
+                                    <a asp-action="Delete" asp-root-id="@slide.Id" class="btn btn-danger">
+                                        <i class="fa fa-delete">
+                                    </a>
+                                </td>
+                            </tr>
+                            count++;
+                        }
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

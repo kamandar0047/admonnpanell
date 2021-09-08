@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Front_Back</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20210902045208_AddDescriptionColumnsSlides.cs" />
+    <Compile Remove="Migrations\20210902045208_AddDescriptionColumnsSlides.Designer.cs" />
+    <Compile Remove="Migrations\20210902053033_CreateIntroductionTable.cs" />
+    <Compile Remove="Migrations\20210902053033_CreateIntroductionTable.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Build.Tasks.Core" Version="16.11.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.18" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.15" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.15">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+    <PackageReference Include="System.Collections" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\AdminPanel\Data\" />
+    <Folder Include="Areas\AdminPanel\Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\admin\fonts\fa-solid-900.svg" />
+    <None Include="wwwroot\admin\fonts\fa-solid-900.woff2" />
+    <None Include="wwwroot\admin\fonts\Pe-icon-7-stroke.svg" />
+    <None Include="wwwroot\admin\scripts\main.js" />
+  </ItemGroup>
+
+</Project>

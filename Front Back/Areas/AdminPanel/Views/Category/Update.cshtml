@@ -1,0 +1,40 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="row">
+    <div class="card-body">
+        <h5 class="card-title">Update category</h5>
+        <form class="forms-sample" method="post">
+            <div class="form-row">
+                <div class="col-md-6">
+                    <div class="position-relative form-group">
+                        <label asp-for="Name"></label>
+                        <input asp-for="Name" class="form-control" placeholder="Name">
+                        <span asp-validation-for="Name" class="text-danger">  </span>>
+                    </div>
+                    <span asp-validation-for="Name" class="text-danger"></span>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="position-relative form-group">
+                        <label for="examplePassword11" class="">Password</label><input name="password" id="examplePassword11" placeholder="password " type="password"
+                                                                                       class="form-control">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="position-relative form-check"><input name="check" id="exampleCheck" type="checkbox" class="form-check-input"><label for="exampleCheck" class="form-check-label">Check me out</label></div>
+            <button class="mt-2 btn btn-primary">Submit</button>
+            <button class="mt-2 btn  btn-light">Cancel </button>
+        </form>
+    </div>
+</div>
+@section Script
+{
+<partial name="_ValidationPartial"/>
+
+   }
+
